@@ -41,6 +41,8 @@ spec:
         app: emoji-svc
     spec:
       serviceAccountName: emoji
+      nodeSelector:
+        "beta.kubernetes.io/os": linux        
       containers:
       - env:
         - name: GRPC_PORT
@@ -88,6 +90,8 @@ spec:
         app: voting-svc
     spec:
       serviceAccountName: voting
+      nodeSelector:
+        "beta.kubernetes.io/os": linux          
       containers:
       - env:
         - name: GRPC_PORT
@@ -135,6 +139,8 @@ spec:
         app: web-svc
     spec:
       serviceAccountName: web
+      nodeSelector:
+        "beta.kubernetes.io/os": linux          
       containers:
       - env:
         - name: WEB_PORT
@@ -187,6 +193,8 @@ spec:
       labels:
         app: vote-bot
     spec:
+      nodeSelector:
+        "beta.kubernetes.io/os": linux        
       containers:
       - command:
         - emojivoto-vote-bot
